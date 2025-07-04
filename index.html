@@ -1,263 +1,177 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-   
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Le Petit Gourmet</title>
+  <style>
+    :root {
+      --main-color: #8b3a3a;
+      --light-bg: #f9f3ed;
+      --font-main: 'Segoe UI', sans-serif;
+    }
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Site de philosophie pour les élèves de terminale : cours, conseils de méthode, choix de textes, lexique, fiches sur les grands auteurs, citations philosophiques commentées, bibliographies, quelques exemples de bonnes copies et corrigés. Tout pour comprendre ce qui est attendu de vous en philo au bac !">
-  <meta name="author" content="Stéphane Pellicier">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <title>maphilosophie - Accueil</title>
+    body {
+      font-family: var(--font-main);
+      background-color: #fff8f0;
+      color: #333;
+      line-height: 1.6;
+    }
 
-  <!-- Bootstrap core CSS -->
-  <link href="https://www.maphilosophie.fr/bootstrap/bootstrap.min.css" rel="stylesheet">
+    header {
+      background-color: var(--main-color);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-  <!-- Custom fonts for this template -->
-  <link href="https://www.maphilosophie.fr/bootstrap/all.min.css" rel="stylesheet" type="text/css">
-  
-  <!-- Pour l'icône hamburger du boutton Menu -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    header h1 {
+      font-size: 1.5rem;
+    }
 
-  <!-- Custom styles for this template -->
-  <link href="https://www.maphilosophie.fr/bootstrap/clean-blog.min.css" rel="stylesheet">
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
-<style type='text/css'>
-@font-face {
-    font-family: "SketchScript";
-    src: url("SketchScript.otf");
-  }
-@font-face {
-    font-family: "SecondChance";
-    src: url("SecondChanceSketch.ttf");
-}
-a.lienperso {
-color:firebrick;
-}
-h1 {
-font-family: SecondChance;
-font-weight: normal;
-}
-h2 {
-color:firebrick;
-font-family: 'SecondChance';
-}
-mark {
-background-color:yellow;
-}
-mark.pink {
-  background-color: pink;
-  color: black;
-  }
-a.brique {
-color:firebrick;
-}
-.titre {
-font-size:14pt;
-font-weight:bold;
-color: #17657D;
-text-align:left;
-}
-.billet {
-padding:1em;
-margin:1em;
-font-family:NotoSerif;
-background-color:#F8F8FF;
-}
-.date {
-font-style:italic;
-text-align:left;
-font-size:10pt;
-color:#8f8f8f;
-}
-.contenu {
-font-size:12pt;
-text-align:justify;
-text-indent:1em;
-}
-.tags {
-color:#4682B4;
-font-weight:bold;
-font-size:10pt;
-}
-hr {
-width:20%;
-height:2px;
-float:left;
-color:firebrick;
-}
-</style>
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url('https://source.unsplash.com/1600x600/?restaurant,food') center/cover no-repeat;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h2 {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-size: 1.8rem;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--main-color);
+      margin-bottom: 1rem;
+    }
+
+    .hours, .contact {
+      background-color: var(--light-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    .contact a {
+      color: var(--main-color);
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: var(--main-color);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* -------- Responsive -------- */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        height: 200px;
+      }
+
+      .hero h2 {
+        font-size: 1.4rem;
+        padding: 0.8rem 1.2rem;
+      }
+
+      nav {
+        margin-top: 1rem;
+        gap: 0.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="index.php">Home</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fa fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.maphilosophie.fr/cours.php">Cours</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.maphilosophie.fr/base_textes.php">Textes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.maphilosophie.fr/base_auteurs.php">Auteurs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.maphilosophie.fr/conseils_methodes.php">Méthodes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.maphilosophie.fr/dico_philo.php">Lexique</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.maphilosophie.fr/citations.php">Citations</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.maphilosophie.fr/biblio.php">Lectures</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.maphilosophie.fr/complements.php">Compléments</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- Page Header -->
-  <header class="masthead" style="height: 350px; background-image: url('https://www.maphilosophie.fr/bootstrap/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>maphilosophie.fr</h1>
-            <span class="subheading">Site de philo pour les élèves de terminale</span>
-          </div>
-        </div>
-      </div>
-    </div>
+  <header>
+    <h1>Le Petit Gourmet</h1>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <!-- Main Content -->
-  <div class="container">
-<div class="row">
-      <div class="col-lg-6 col-md-6 mx-auto" style="color:firebrick; font-size:14pt;"> 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-</head>
-<i>Un psychotique, c'est quelqu'un qui croit dur comme fer que 2 et 2 font 5, et qui en est pleinement satisfait. Un névrosé, c'est quelqu'un qui sait pertinemment que 2 et 2 font 4, et ça le rend malade !</i><br><b>(Desproges)</b></html>      </div>
-	  <div class="col-lg-4 col-md-4 mx-auto">
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-  <meta charset="utf-8">
-</head>
-<style type='text/css'>
-a {
-color:firebrick;
-}
-img.etiquette:hover{
-    -webkit-transform: scale(1.5);
-	transform: scale(1.5);
-}
-</style>
-
-</html>	  
-      </div>
-</div>
-<br>
-<br>
-<br>
-
-<span style ="color:firebrick; font-size:22pt;"><b>A lire, à voir, à écouter :</b></span>
-<br>
-
-<div class="row">
-  <div class="col-lg-12 col-md-12 mx-auto">
-    <div class="post-preview">
-<form action="index2.php" method="post">
-<span style="font-size:10pt;">
-<input type="text" name="cle" style="color:grey; text-align:left;"><br>
-<input type="submit" value="Chercher un article">
-</span>
-</form>
-    </div>
+  <div class="hero">
+    <h2>Une cuisine simple, locale et savoureuse</h2>
   </div>
-</div>
 
-<div class="row">
-  <div class="col-lg-12 col-md-12 mx-auto">
-    <div class="post-preview" style="font-size:18pt; text-align:right;">
-<article class="billet"><section class="titre">Nouveau :</section><section class="date">Lien</section><hr><br><section class="contenu">J'ai créé la semaine dernière une "chaîne" ou un canal sur WhatsApp. Si ça vous intéresse, c'est par ici :<br>
-<a href="https://whatsapp.com/channel/0029VaEzChj6LwHoEr4QAX04">Suivre la chaîne maphilosophie.fr sur WhatsApp  : https://whatsapp.com/channel/0029VaEzChj6LwHoEr4QAX04</a></section><br><section class="date">Publié le 01/12/2023</section><section class="tags">#Actualité Site</section></article><article class="billet"><section class="titre">Le choix à l'ère du numérique : comment échapper au risque de submersion ?</section><section class="date">Le meilleur des mondes - France Culture [Podcast Radio]</section><hr><br><section class="contenu"><img style="width:15%;float:left;padding:1em;" src="https://www.radiofrance.fr/s3/cruiser-production/2023/11/1cb74642-e010-4bbd-ab45-1370520c34f5/560x315_sc_visuel-atlas.webp">
+  <section id="about">
+    <h2>Bienvenue au Petit Gourmet</h2>
+    <p>Situé au cœur du village, notre restaurant vous propose une cuisine maison élaborée à partir de produits frais et locaux. Que ce soit pour un déjeuner rapide ou un dîner en famille, nous vous accueillons dans une ambiance chaleureuse.</p>
+  </section>
 
-"Le Meilleur des mondes" se penche sur la paralysie que l'offre de contenus pléthorique sur les différentes plateformes tend à créer, à l'heure de la société numérique.
-Avec :<br>
-<br>
-&nbsp;&nbsp;• <b>Bruno Patino</b> Président de la chaîne franco-allemande ARTE<br>
-&nbsp;&nbsp;• <b>Anne Alombert</b> Philosophe, maîtresse de conférences à l'Université Paris 8, spécialiste des enjeux anthropologiques des transformations technologiques contemporaines<br>
-<br>
-<a href="https://www.radiofrance.fr/franceculture/podcasts/le-meilleur-des-mondes/le-choix-a-l-ere-du-numerique-comment-echapper-au-risque-de-submersion-3181308">Lien vers l'émission</a></section><br><section class="date">Publié le 22/11/2023</section><section class="tags">#Numérique Attention</section></article><article class="billet"><section class="titre">D'où vient le mythe de l'entrepreneur ?</section><section class="date">Les idées larges - Arte [vidéo]</section><hr><br><section class="contenu"><img style="float: left; width:20%;" src="https://api-cdn.arte.tv/img/v2/image/DqVNzutg6vnDEG43ihHkZM/1920x1080?type=TEXT&watermark=true">
+  <section id="menu">
+    <h2>Notre Menu</h2>
+    <p>Découvrez notre carte de saison : plats du jour, suggestions végétariennes, desserts maison...<br>
+      👉 <a href="menu.html">Consulter le menu</a>
+    </p>
+  </section>
 
-À écouter/voir absolument !</p>
-<p>Une émission sur un livre publié il y a quelques mois par Anthony Galluzo sur "Le mythe de l'entrepreneur".</p>
+  <section class="hours">
+    <h2>Horaires d'ouverture</h2>
+    <ul>
+      <li>Lundi : fermé</li>
+      <li>Mardi à vendredi : 12h – 14h / 19h – 22h</li>
+      <li>Samedi : 19h – 23h</li>
+      <li>Dimanche : 12h – 15h</li>
+    </ul>
+  </section>
 
-<p>Le livre est surtout centré sur le personnage de Steve Jobs, mais il analyse ce mythe qu'entretient la Silicon Valley en particulier du génie solitaire qui transforme le monde et réussit par son seul talent et la force de sa volonté. Bref, il invite à une réflexion sur le fameux "quand on veut on peut" qui légitime un système inégalitaire.</p>
+  <section id="contact" class="contact">
+    <h2>Nous contacter</h2>
+    <p>📍 12 rue de la Place, 12345 Village<br>
+       📞 01 23 45 67 89<br>
+       📧 contact@lepetitgourmet.fr</p>
+    <p><a href="https://goo.gl/maps/example" target="_blank">Voir sur Google Maps</a></p>
+  </section>
 
-<p>Livre au croisement de l'économie, de la sociologie, de la philosophie ou encore du management.</p>
-
-<p><a href="https://youtu.be/MZ1OMTevxdE?si=PYOJZ95qZwUnlQWK">Lien vers la vidéo</a></p></section><br><section class="date">Publié le 15/11/2023</section><section class="tags">#Numérique Politique Entrepreneur Mythe Égalité Liberté</section></article><article class="billet"><section class="titre">Travailler a-t-il un sens ? </section><section class="date">Les idées larges - Arte [vidéo]</section><hr><br><section class="contenu"><img style="float:left; width:20%; padding:1em;" src="https://i.ytimg.com/vi/mU9jMhXLTN0/hqdefault.jpg">
-
-On utilise le mot travail tous les jours.  Le matin on repense à un rêve qui nous travaille. On travaille sur nos émotions chez le psy et bien sûr on va tous les jours au travail pour pouvoir payer son loyer.  Mais parfois quand on est au travail et qu’on passe des heures dans de longues réunions inutiles, on a le sentiment qu’on n’a pas eu le temps de vraiment travailler. 
-Alors de quoi parle-t-on ? Tout le monde comprend le mot travail, mais on est bien embêtés dès lors qu’on nous demande de le définir.</p>
-
-<p>C’est le point de départ du livre de la sociologue Marie-Anne Dujarier, Troubles dans le travail : Sociologie d’une catégorie de pensée. Elle y explique que le travail n’existe pas en soi, que c’est une catégorie de pensée qui a émergé à partir du XIe siècle, et qui est valorisée moralement et socialement depuis le début du capitalisme.</p>
-
-<p>Non seulement le mot travail a plusieurs sens, mais de plus en plus de gens s’interrogent sur le sens qu’a leur travail, et notamment sur son utilité. Travailler a-t-il un sens, dans tous les sens du terme ?</p></section><br><section class="date">Publié le 03/11/2023</section><section class="tags">#Travail Sens Liberté Valeur</section></article> 
-</div>
-
-
-  <!-- Footer -->
   <footer>
-    <div class="container">
-
-<br>
-
-    <div class="row">
-      <div class="offset-lg-7 col-md-7 mx-auto" style="font-size:12pt;">
-      </div>
-    </div>
-<br>
-<br>
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><center><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></center></a><br />
-        </div>
-      </div>
-<center><span style="color:firebrick; font-size:9pt;">Site réalisé par Stéphane Pellicier, prof au Lycée Albert Thomas (Roanne) <br> 2007 - 2025</span></center>    </div>
+    &copy; 2025 Le Petit Gourmet – Tous droits réservés
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="https://www.maphilosophie.fr/bootstrap/jquery.min.js"></script>
-  <script src="https://www.maphilosophie.fr/bootstrap/bootstrap.bundle.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="https://www.maphilosophie.fr/bootstrap/clean-blog.min.js"></script>
-
 </body>
-
 </html>
